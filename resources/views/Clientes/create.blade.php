@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css
-    ">
+@extends('adminlte::page')
 
-</head>
-<body>
+@section('title', 'Sistema de Registro')
+
+@section('content_header')
+    <h1>Registro de Cliente</h1>
+@stop
+
+@section('content')
+
     <form action="{{ route('clientes.store') }}" method="post">
         @csrf
 
@@ -30,7 +27,7 @@
         @error('nombres')
             <small>*{{ $message }}</small>
         @enderror
-        
+
 
         <select name="tipoHabitacion" class="form-control">
             <option disabled selected>Tipo de Habitación</option>
@@ -52,5 +49,14 @@
         <button type="submit" class="btn btn-dark">Crear</button>
     </form>
 
-</body>
-</html>
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script>
+        console.log('Hi!');
+    </script>
+@stop

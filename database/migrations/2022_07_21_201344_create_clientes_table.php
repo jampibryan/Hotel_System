@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
-            $table->string('dni');
-            $table->string('nombres');
+            $table->string('dni',8);
+            $table->string('nombres',30);
             $table->string('tipoHabitacion');
             $table->integer('tiempoEstadia');
             // $table->integer('monto');

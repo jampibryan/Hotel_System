@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('adminlte::page')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css
-    ">
-</head>
+@section('title', 'Sistema de Registro')
 
-<body>
+@section('content_header')
+    <h1>Editar Cliente</h1>
+@stop
+
+@section('content')
     <form action="{{ route('clientes.update', $cliente) }}" method="post">
         @csrf
 
@@ -54,6 +50,15 @@
         <a href="{{ route('clientes.index') }}" class="btn btn-danger">Cancelar</a>
         <button type="submit" class="btn btn-dark">Crear</button>
     </form>
-</body>
 
-</html>
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script>
+        console.log('Hi!');
+    </script>
+@stop

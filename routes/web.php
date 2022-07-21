@@ -28,4 +28,5 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::resource('clientes', ClientesController::class);
+Route::resource('/sistema/clientes', ClientesController::class);
+
